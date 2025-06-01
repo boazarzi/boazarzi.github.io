@@ -26,9 +26,10 @@ body {
    Header & Logo Container
    =================================================================== */
 header {
-  display: flex;                    /* make header a flex container */
+  display: flex;                    /* horizontal layout */
+  flex-wrap: wrap;                  /* allow children to wrap when needed */
   align-items: center;              /* vertically center logo + nav */
-  justify-content: space-between;   /* push logo-container left and nav right */
+  justify-content: space-between;   /* push logo left, nav right */
   background-color: rgba(0, 0, 0, 0.25);
   padding: 1rem 2rem;
   position: sticky;
@@ -43,14 +44,9 @@ header {
 }
 
 #logo {
-  width: 120px;
-  height: 120px;
-}
-
-#text-container {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
 }
 
 #site-title {
@@ -59,22 +55,18 @@ header {
   color: #ffd54f; /* Gold accent */
 }
 
-#site-subtitle {
-  font-size: 1rem;
-  color: #e0e0e0; /* Light gray */
-  margin-top: 0.25rem;
-}
-
 /* ===================================================================
    Navigation Bar
    =================================================================== */
 nav {
-  margin: 0; /* or simply delete the margin-top rule */
+  margin: 0;
 }
+
 nav ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;    /* allow links to wrap onto next line if needed */
 }
 
 nav li a {
@@ -109,18 +101,17 @@ nav li a:hover {
 .hero-text {
   position: absolute;
   top: 50%;
-  left: 33.3%;
+  left: 33.3%;                     /* desktop: one-third across */
   transform: translate(-50%, -50%);
   font-size: 2.5rem;
   font-weight: bold;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  white-space: nowrap;             /* keep heading and subtitle on one “line” block */
 }
 
 /* ===================================================================
    Content Sections (Reduced Height & Right-Aligned Images)
    =================================================================== */
-
-/* Reduced padding to make sections less tall */
 section.content-section {
   padding: 2rem 1.5rem;                   /* was 3rem 2rem */
   background-color: rgba(255, 255, 255, 0.9);
@@ -154,7 +145,6 @@ section.content-section a:hover {
   color: #1B5E20;
 }
 
-/* Flex container now vertically centered and pushes image to the right */
 section.content-section .content-flex {
   display: flex;
   align-items: center;            /* vertically center text & image */
@@ -163,19 +153,16 @@ section.content-section .content-flex {
   margin-top: 1rem;
 }
 
-/* Text block takes up remaining space */
 section.content-section .text-block {
   flex: 1 1 auto;      /* grow and shrink as needed */
   margin-right: 1rem;  /* spacing before image */
 }
 
-/* Image block fixed size (or auto) and always on the right */
 section.content-section .image-block {
   flex: 0 0 auto;      /* do not grow or shrink */
-  max-width: 20%;       /* ensure image doesn’t overpower text */
+  max-width: 20%;      /* ensure image doesn’t overpower text */
 }
 
-/* Ensure the img inside .image-block is responsive */
 section.content-section .image-block img {
   width: 100%;
   height: auto;
@@ -217,39 +204,86 @@ footer p {
 /* ===================================================================
    Responsive Adjustments
    =================================================================== */
+@media (max-width: 1024px) {
+  /* Slightly reduce logo for tablets/laptops if needed */
+  #logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 @media (max-width: 768px) {
-  #site-title {
-    font-size: 1.25rem;
+  /* Header tweaks: allow nav to move below if necessary */
+  header {
+    padding: 0.75rem 1rem;
   }
-  nav ul {
-    gap: 1rem;
-  }
+
   #logo {
     width: 60px;
     height: 60px;
   }
-  #hero-text {
-    font-size: 2rem;
+
+  #site-title {
+    font-size: 1.25rem;
   }
+
+  /* Nav links stack vertically under narrower widths */
+  nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  /* Center hero-text for tablets/mobiles */
+  .hero-text {
+    left: 50%;                  /* center horizontally */
+    transform: translate(-50%, -50%);
+    font-size: 2rem;            /* a bit smaller */
+    white-space: normal;        /* allow wrapping if needed */
+    text-align: center;
+    width: 80%;                 /* constrain width so it wraps nicely */
+  }
+
+  /* Content sections adjust padding/margin */
   section.content-section {
-    padding: 1.5rem 1rem; /* further reduce on smaller screens */
+    padding: 1.5rem 1rem;
     margin: 1rem;
   }
   section.content-section h2 {
     font-size: 1.75rem;
   }
-  section.content-section .image-block {
-    max-width: 100%;    /* full-width image on narrow screens */
-    margin-top: 1rem;   /* spacing above image when stacked */
-  }
+
+  /* Stack content-flex vertically */
   section.content-section .content-flex {
-    flex-direction: column; /* stack text and image vertically */
+    flex-direction: column;
     align-items: flex-start;
+  }
+  section.content-section .image-block {
+    max-width: 100%;
+    margin-top: 1rem;
   }
 }
 
-@media (max-width: 600px) {
-  #home h1 {
-    font-size: 1.75rem;
+@media (max-width: 480px) {
+  /* Further shrink hero text on very small screens */
+  .hero-text {
+    font-size: 1.5rem;
+    width: 90%;
+  }
+
+  /* Header padding tighter on phones */
+  header {
+    padding: 0.5rem;
+  }
+
+  /* Nav link font smaller */
+  nav li a {
+    font-size: 0.9rem;
+  }
+
+  /* Content section headings smaller */
+  section.content-section h2 {
+    font-size: 1.5rem;
   }
 }

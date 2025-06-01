@@ -1,0 +1,255 @@
+/* ===================================================================
+   Reset / Global Styles
+   =================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #fff; /* White text by default on dark gradient */
+}
+
+/* ===================================================================
+   Body Background Gradient
+   =================================================================== */
+body {
+  background: linear-gradient(to bottom right, #0D47A1, #1B5E20);
+}
+
+/* ===================================================================
+   Header & Logo Container
+   =================================================================== */
+header {
+  display: flex;                    /* make header a flex container */
+  align-items: center;              /* vertically center logo + nav */
+  justify-content: space-between;   /* push logo-container left and nav right */
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#logo {
+  width: 120px;
+  height: 120px;
+}
+
+#text-container {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+#site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffd54f; /* Gold accent */
+}
+
+#site-subtitle {
+  font-size: 1rem;
+  color: #e0e0e0; /* Light gray */
+  margin-top: 0.25rem;
+}
+
+/* ===================================================================
+   Navigation Bar
+   =================================================================== */
+nav {
+  margin: 0; /* or simply delete the margin-top rule */
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav li a {
+  font-size: 1rem;
+  color: #FFFFFF;
+  padding: 0.25rem 0.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #000000;
+}
+
+/* ===================================================================
+   Hero Section
+   =================================================================== */
+#home {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+#hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(1);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 33.3%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* ===================================================================
+   Content Sections (Reduced Height & Right-Aligned Images)
+   =================================================================== */
+
+/* Reduced padding to make sections less tall */
+section.content-section {
+  padding: 2rem 1.5rem;                   /* was 3rem 2rem */
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 1.5rem auto;                    /* reduced top/bottom margin */
+  max-width: 1000px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+section.content-section:nth-of-type(even) {
+  background-color: rgba(250, 250, 250, 0.9);
+}
+
+section.content-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1B5E20; /* Forest green */
+}
+
+section.content-section p {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+section.content-section a {
+  color: #0D47A1; /* Navy */
+  text-decoration: underline;
+}
+
+section.content-section a:hover {
+  color: #1B5E20;
+}
+
+/* Flex container now vertically centered and pushes image to the right */
+section.content-section .content-flex {
+  display: flex;
+  align-items: center;            /* vertically center text & image */
+  justify-content: space-between; /* push items to edges */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Text block takes up remaining space */
+section.content-section .text-block {
+  flex: 1 1 auto;      /* grow and shrink as needed */
+  margin-right: 1rem;  /* spacing before image */
+}
+
+/* Image block fixed size (or auto) and always on the right */
+section.content-section .image-block {
+  flex: 0 0 auto;      /* do not grow or shrink */
+  max-width: 20%;       /* ensure image doesn’t overpower text */
+}
+
+/* Ensure the img inside .image-block is responsive */
+section.content-section .image-block img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ===================================================================
+   Footer
+   =================================================================== */
+footer {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #FFD54F; /* Gold accent on hover */
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #EEE;
+}
+
+/* ===================================================================
+   Responsive Adjustments
+   =================================================================== */
+@media (max-width: 768px) {
+  #site-title {
+    font-size: 1.25rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+  #logo {
+    width: 60px;
+    height: 60px;
+  }
+  #hero-text {
+    font-size: 2rem;
+  }
+  section.content-section {
+    padding: 1.5rem 1rem; /* further reduce on smaller screens */
+    margin: 1rem;
+  }
+  section.content-section h2 {
+    font-size: 1.75rem;
+  }
+  section.content-section .image-block {
+    max-width: 100%;    /* full-width image on narrow screens */
+    margin-top: 1rem;   /* spacing above image when stacked */
+  }
+  section.content-section .content-flex {
+    flex-direction: column; /* stack text and image vertically */
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  #home h1 {
+    font-size: 1.75rem;
+  }
+}

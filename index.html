@@ -51,11 +51,11 @@
           <p>Turn any event flyer into your next calendar event in seconds.</p>
           <p>
             From your mobile device,
-            <a href="https://eventguru.guruappsai.com" target="_blank">go to app</a>
+            <a href="https://app--event-guru-8962af65.base44.app" target="_blank">go to app</a>
           </p>
         </div>
         <div class="image-block">
-          <a href="https://eventguru.guruappsai.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://app--event-guru-8962af65.base44.app" target="_blank" rel="noopener noreferrer">
             <img
               src="assets/Event Guru Logo.png"
               alt="Event Guru"
@@ -71,11 +71,11 @@
           <p>Understand the menu, see allergens, dine confidently.</p>
           <p>
             From your mobile device,
-            <a href="https://menuguru.guruappsai.com" target="_blank">go to app</a>
+            <a href="https://app--menu-guru-592703b0.base44.app" target="_blank">go to app</a>
           </p>
         </div>
         <div class="image-block">
-          <a href="https://menuguru.guruappsai.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://app--menu-guru-592703b0.base44.app" target="_blank" rel="noopener noreferrer">
             <img
               src="assets/Menu Guru Logo2.png"
               alt="Menu Guru"
@@ -164,67 +164,11 @@
       <a href="#" aria-label="Instagram">Instagram</a>
     </div>
 
-    <!-- Privacy Notice Link -->
+    <!-- Updated Privacy Notice Link to open in a new tab -->
     <p>
-      <a href="privacy.txt" id="privacy-link">Privacy Notice</a>
+      <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Notice</a>
     </p>
     <p>&copy; 2025 Guru Apps. All rights reserved.</p>
   </footer>
-
-  <!-- ===== Privacy Notice Modal ===== -->
-  <div id="privacy-modal" class="modal">
-    <div class="modal-content">
-      <span id="privacy-close" class="close-button">&times;</span>
-      <div id="privacy-text">
-        <!-- Loaded dynamically via JavaScript from privacy.txt -->
-        <p>Loading...</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== JavaScript for Modal ===== -->
-  <script>
-    // Get elements
-    const privacyLink = document.getElementById('privacy-link');
-    const privacyModal = document.getElementById('privacy-modal');
-    const privacyClose = document.getElementById('privacy-close');
-    const privacyText = document.getElementById('privacy-text');
-
-    // Function to open modal and load content
-    privacyLink.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      // Fetch the privacy.txt file (make sure privacy.txt is in the same folder)
-      fetch('privacy.txt')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not OK');
-          }
-          return response.text();
-        })
-        .then(text => {
-          privacyText.innerHTML = '<pre>' + text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</pre>';
-        })
-        .catch(err => {
-          privacyText.innerHTML = '<p>Unable to load the privacy notice at this time.</p>';
-          console.error('Fetch error:', err);
-        });
-
-      // Show the modal
-      privacyModal.style.display = 'flex';
-    });
-
-    // Close the modal when the user clicks the “×”
-    privacyClose.addEventListener('click', function() {
-      privacyModal.style.display = 'none';
-    });
-
-    // Also close if the user clicks outside the modal content
-    window.addEventListener('click', function(e) {
-      if (e.target === privacyModal) {
-        privacyModal.style.display = 'none';
-      }
-    });
-  </script>
 </body>
 </html>

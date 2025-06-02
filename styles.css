@@ -131,6 +131,16 @@ section.content-section h2 {
   color: #1B5E20; /* Forest green */
 }
 
+/* Ensure app names (h3) are dark in Apps section */
+section.content-section h3 {
+  color: #1B5E20; /* Forest green for app titles */
+}
+
+/* Ensure list items are visible on a white background */
+section.content-section li {
+  color: #333; /* Dark gray for bullets/text */
+}
+
 section.content-section p {
   margin-bottom: 1rem;
   color: #333;
@@ -287,3 +297,69 @@ footer p {
     font-size: 1.5rem;
   }
 }
+
+/* ===================================================================
+   Privacy Notice Modal Styles
+   =================================================================== */
+.modal {
+  display: none;                /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+  justify-content: center;      /* center modal-content horizontally */
+  align-items: center;          /* center modal-content vertically */
+  z-index: 1000;                /* on top of everything else */
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 1.5rem;
+  max-width: 600px;
+  max-height: 80%;
+  width: 90%;
+  overflow-y: auto;             /* scroll if content is tall */
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+/* Style the preformatted privacy text inside modal */
+#privacy-text {
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;        /* preserve line breaks */
+}
+
+/* ===================================================================
+   Optional: Adjust modal for very small screens
+   =================================================================== */
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 90%;
+    padding: 1rem;
+  }
+  .close-button {
+    top: 8px;
+    right: 10px;
+    font-size: 1.25rem;
+  }
+}
+

@@ -5,18 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guru Apps</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
 </head>
 
 <body>
   <!-- ===== Header ===== -->
   <header>
-    <div id="logo-container">      
+    <div id="logo-container">
       <img id="logo" src="assets/guruappslogo4.png" alt="Guru Apps Logo" />
       <span id="site-title">Guru Apps</span>
     </div>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
+        <li><a href="#apps">Apps</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -26,62 +28,128 @@
   <!-- ===== Main Content ===== -->
   <main>
     <!-- Hero Section (Home) -->
-    <section id="home">      
+    <section id="home">
       <img
         id="hero-image"
         src="assets/hero.webp"
         alt="Hero Image Placeholder"
       />
       <div class="hero-text">
-    	<h1>Welcome to Guru Apps</h1>
-	    <p>AI tools that work for you</p>
-       </div>
+        <h1>Welcome to Guru Apps</h1>
+        <p>AI tools that work for you</p>
+      </div>
     </section>
 
-    <!-- About Section (Content Section 1) -->
-    <section id="about" class="content-section">
-      <h2>Event Guru</h2>
+    <!-- Apps Section -->
+    <section id="apps" class="content-section">
+      <h2>Our Apps</h2>
+
+      <!-- Event Guru Block -->
       <div class="content-flex">
         <div class="text-block">
+          <h3>Event Guru</h3>
+          <p>Turn any event flyer into your next calendar event in seconds.</p>
           <p>
-            Turn any event flyer into your next calendar event in seconds.
-          </p>
-          <p> From your mobile device,
-            <a href="https://app--event-guru-8962af65.base44.app" target="_blank">go to app</a>
+            From your mobile device,
+            <a href="https://eventguru.guruappsai.com" target="_blank">go to app</a>
           </p>
         </div>
         <div class="image-block">
-          <a href="https://app--event-guru-8962af65.base44.app" target="_blank" rel="noopener noreferrer">
-		<img
-		    src="assets/Event Guru Logo.png"
-		    alt="Event Guru"
-		  />
-	  </a>
+          <a href="https://eventguru.guruappsai.com" target="_blank" rel="noopener noreferrer">
+            <img
+              src="assets/Event Guru Logo.png"
+              alt="Event Guru"
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- Menu Guru Block -->
+      <div class="content-flex" style="margin-top: 2rem;">
+        <div class="text-block">
+          <h3>Menu Guru</h3>
+          <p>Understand the menu, see allergens, dine confidently.</p>
+          <p>
+            From your mobile device,
+            <a href="https://menuguru.guruappsai.com" target="_blank">go to app</a>
+          </p>
+        </div>
+        <div class="image-block">
+          <a href="https://menuguru.guruappsai.com" target="_blank" rel="noopener noreferrer">
+            <img
+              src="assets/Menu Guru Logo2.png"
+              alt="Menu Guru"
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- Future apps can be added here in the exact same pattern -->
+    </section>
+
+    <!-- About Section (New) -->
+    <section id="about" class="content-section">
+      <h2>About Guru Apps</h2>
+      <div class="content-flex">
+        <div class="text-block">
+          <p>
+            Guru Apps is on a mission to make every restaurant visit effortless. 
+            We started with Menu Guru and Event Guru—two AI‐powered tools designed 
+            to streamline your dining and event planning. As your “restaurant companion,” 
+            we’ll continue rolling out new features to cover reservations, reviews, 
+            and more.
+          </p>
+          <p>
+            Our team believes that technology should enhance real‐world experiences, 
+            not get in the way. That’s why each Guru Apps product lives on your phone, 
+            ready to serve you every time you step into a restaurant.
+          </p>
+        </div>
+        <div class="image-block">
+          <!-- You can replace this placeholder with a company photo or illustration -->
+          <img
+            src="assets/about-placeholder.png"
+            alt="About Guru Apps"
+          />
         </div>
       </div>
     </section>
 
-    <!-- Contact Section (Content Section 2) -->
+    <!-- Contact Section (New) -->
     <section id="contact" class="content-section">
-      <h2>Menu Guru</h2>
+      <h2>Contact Us</h2>
       <div class="content-flex">
         <div class="text-block">
           <p>
-            Understand the menu, see allergens, dine confidently.
+            Have questions, feedback, or feature requests? We’d love to hear from you!
           </p>
-          <p>From your mobile device,
-            <a href="https://app--menu-guru-592703b0.base44.app" target="_blank">go to app</a>	
-          </p>
+          <ul>
+            <li>
+              Email: 
+              <a href="mailto:support@guruappsai.com">
+                support@guruappsai.com
+              </a>
+            </li>
+            <li>
+              Twitter: 
+              <a href="https://twitter.com/GuruAppsAI" target="_blank">
+                @GuruAppsAI
+              </a>
+            </li>
+            <li>
+              Instagram: 
+              <a href="https://instagram.com/GuruAppsAI" target="_blank">
+                @GuruAppsAI
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="image-block">
-          <!-- Placeholder image; replace with your own -->
-          <a href="https://app--menu-guru-592703b0.base44.app" target="_blank" rel="noopener noreferrer">
-		<img
-		    src="assets/Menu Guru Logo2.png"
-		    alt="Menu Guru"
-		  />
-	  </a>
-
+          <!-- Optionally replace with a contact illustration -->
+          <img
+            src="assets/contact-placeholder.png"
+            alt="Contact Guru Apps"
+          />
         </div>
       </div>
     </section>
@@ -90,12 +158,73 @@
   <!-- ===== Footer ===== -->
   <footer>
     <div class="social-links">
-      <!-- Replace href="#" with actual social URLs -->
+      <!-- Replace href="#" with actual social URLs if you’d like -->
       <a href="#" aria-label="Twitter">Twitter</a>
       <a href="#" aria-label="Facebook">Facebook</a>
       <a href="#" aria-label="Instagram">Instagram</a>
     </div>
+
+    <!-- Privacy Notice Link -->
+    <p>
+      <a href="privacy.txt" id="privacy-link">Privacy Notice</a>
+    </p>
     <p>&copy; 2025 Guru Apps. All rights reserved.</p>
   </footer>
+
+  <!-- ===== Privacy Notice Modal ===== -->
+  <div id="privacy-modal" class="modal">
+    <div class="modal-content">
+      <span id="privacy-close" class="close-button">&times;</span>
+      <div id="privacy-text">
+        <!-- Loaded dynamically via JavaScript from privacy.txt -->
+        <p>Loading...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== JavaScript for Modal ===== -->
+  <script>
+    // Get elements
+    const privacyLink = document.getElementById('privacy-link');
+    const privacyModal = document.getElementById('privacy-modal');
+    const privacyClose = document.getElementById('privacy-close');
+    const privacyText = document.getElementById('privacy-text');
+
+    // Function to open modal and load content
+    privacyLink.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Fetch the privacy.txt file (make sure privacy.txt is in the same folder)
+      fetch('privacy.txt')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not OK');
+          }
+          return response.text();
+        })
+        .then(text => {
+          privacyText.innerHTML = '<pre>' + text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</pre>';
+        })
+        .catch(err => {
+          privacyText.innerHTML = '<p>Unable to load the privacy notice at this time.</p>';
+          console.error('Fetch error:', err);
+        });
+
+      // Show the modal
+      privacyModal.style.display = 'flex';
+    });
+
+    // Close the modal when the user clicks the “×”
+    privacyClose.addEventListener('click', function() {
+      privacyModal.style.display = 'none';
+    });
+
+    // Also close if the user clicks outside the modal content
+    window.addEventListener('click', function(e) {
+      if (e.target === privacyModal) {
+        privacyModal.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>

@@ -20,6 +20,11 @@ body {
    =================================================================== */
 body {
   background: linear-gradient(to bottom right, #0D47A1, #1B5E20);
+  background-repeat: no-repeat;
+  /* lock it behind the content so it never scrolls away: */
+  background-attachment: fixed;
+  /* make the single gradient stretch to cover the full scrollable area: */
+  background-size: cover;
 }
 
 /* ===================================================================
@@ -32,10 +37,13 @@ header {
   justify-content: space-between;   /* push logo left, nav right */
   background-color: rgba(0, 0, 0, 0.25);
   padding: 1rem 2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
 }
+
 
 #logo-container {
   display: flex;
@@ -86,6 +94,7 @@ nav li a:hover {
    Hero Section
    =================================================================== */
 #home {
+  margin-top: 130px; /* push the hero down so it never sits under the header */
   position: relative;
   text-align: center;
   color: white;
@@ -298,55 +307,6 @@ footer p {
   }
 }
 
-/* ===================================================================
-   Privacy Notice Modal Styles
-   =================================================================== */
-.modal {
-  display: none;                /* hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
-  justify-content: center;      /* center modal-content horizontally */
-  align-items: center;          /* center modal-content vertically */
-  z-index: 1000;                /* on top of everything else */
-}
-
-.modal-content {
-  background-color: #fff;
-  padding: 1.5rem;
-  max-width: 600px;
-  max-height: 80%;
-  width: 90%;
-  overflow-y: auto;             /* scroll if content is tall */
-  border-radius: 8px;
-  position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  cursor: pointer;
-}
-
-.close-button:hover {
-  color: #000;
-}
-
-/* Style the preformatted privacy text inside modal */
-#privacy-text {
-  color: #333;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  white-space: pre-wrap;        /* preserve line breaks */
-}
 
 /* ===================================================================
    Optional: Adjust modal for very small screens

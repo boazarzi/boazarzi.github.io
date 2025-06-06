@@ -127,7 +127,7 @@ section.content-section {
   margin: 1.5rem auto;                    /* reduced top/bottom margin */
   max-width: 1000px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
 }
 
 section.content-section:nth-of-type(even) {

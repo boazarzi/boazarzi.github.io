@@ -127,7 +127,7 @@ section.content-section {
   margin: 1.5rem auto;                    /* reduced top/bottom margin */
   max-width: 1000px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 section.content-section:nth-of-type(even) {
@@ -322,4 +322,47 @@ footer p {
     font-size: 1.25rem;
   }
 }
+
+/* ===== Hero: full‐viewport height & cropping ===== */
+#home {
+  margin-top: 130px;                         /* keep below the fixed header */
+  position: relative;
+  text-align: center;
+  color: white;
+  height: calc(100vh - 130px);               /* fill remaining viewport */
+  overflow: hidden;                          /* hide the parts that stick out */
+}
+
+#hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                         /* crop to fill its container */
+}
+
+/* ===== Scale down section icons on tablets & phones ===== */
+@media (max-width: 768px) {
+  section.content-section .content-flex {
+    flex-direction: column;
+    align-items: center;                     /* center both text & image */
+  }
+
+  section.content-section .image-block {
+    max-width: 50%;                          /* limit width of the “icon” */
+    margin-top: 1rem;
+  }
+
+  section.content-section .image-block img {
+    width: 100%;                             /* fill that 50% container */
+    height: auto;
+    display: block;
+  }
+}
+
+/* (Optional) Even tighter on really small phones */
+@media (max-width: 480px) {
+  section.content-section .image-block {
+    max-width: 60%;                          /* a bit larger so it’s still legible */
+  }
+}
+
 

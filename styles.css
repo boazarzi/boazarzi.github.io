@@ -329,7 +329,7 @@ footer p {
   position: relative;
   text-align: center;
   color: white;
-  height: calc(100vh - 130px);               /* fill remaining viewport */
+  height: calc(75vh - 130px);               /* fill remaining viewport */
   overflow: hidden;                          /* hide the parts that stick out */
 }
 

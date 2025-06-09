@@ -383,7 +383,7 @@ footer p {
 #home {
   /* flush under header */
   margin-top: 0;
-  height: calc(75vh - var(--header-height));
+  height: calc(65vh - var(--header-height));
   overflow: hidden;
 }
 

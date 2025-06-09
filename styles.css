@@ -1,6 +1,26 @@
-/* ===================================================================
-   Reset / Global Styles
-   =================================================================== */
+/* ===== styles.css ===== */
+
+/* Global header-height variable */
+:root {
+  --header-height: calc(100px + 2 * 1rem);
+}
+@media (max-width: 1024px) {
+  :root {
+    --header-height: calc(80px + 2 * 1rem);
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    --header-height: calc(60px + 2 * 0.75rem);
+  }
+}
+@media (max-width: 480px) {
+  :root {
+    --header-height: calc(60px + 2 * 0.5rem);
+  }
+}
+
+/* Reset / Global Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,26 +35,85 @@ body {
   color: #fff; /* White text by default on dark gradient */
 }
 
-/* ===================================================================
-   Body Background Gradient
-   =================================================================== */
+/* Body Background Gradient */
 body {
   background: linear-gradient(to bottom right, #0D47A1, #1B5E20);
   background-repeat: no-repeat;
-  /* lock it behind the content so it never scrolls away: */
   background-attachment: fixed;
-  /* make the single gradient stretch to cover the full scrollable area: */
   background-size: cover;
+  padding-top: var(--header-height); /* push content below header */
 }
 
-/* ===================================================================
-   Header & Logo Container
-   =================================================================== */
+/* Hamburger styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+}
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Mobile nav hide/show */
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    align-items: center;
+  }
+  nav#navbar {
+    position: absolute;
+    top: var(--header-height);
+    right: 1rem;
+    width: auto;
+    background: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+  }
+  nav#navbar.open {
+    max-height: 300px; /* adjust as needed */
+  }
+  nav#navbar ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+  }
+  nav#navbar li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+  nav#navbar a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  nav#navbar a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Header & Logo Container */
 header {
-  display: flex;                    /* horizontal layout */
-  flex-wrap: wrap;                  /* allow children to wrap when needed */
-  align-items: center;              /* vertically center logo + nav */
-  justify-content: space-between;   /* push logo left, nav right */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.25);
   padding: 1rem 2rem;
   position: fixed;
@@ -43,7 +122,6 @@ header {
   width: 100%;
   z-index: 10;
 }
-
 
 #logo-container {
   display: flex;
@@ -63,9 +141,7 @@ header {
   color: #ffd54f; /* Gold accent */
 }
 
-/* ===================================================================
-   Navigation Bar
-   =================================================================== */
+/* Navigation Bar */
 nav {
   margin: 0;
 }
@@ -74,7 +150,7 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
-  flex-wrap: wrap;    /* allow links to wrap onto next line if needed */
+  flex-wrap: wrap;
 }
 
 nav li a {
@@ -90,11 +166,9 @@ nav li a:hover {
   color: #000000;
 }
 
-/* ===================================================================
-   Hero Section
-   =================================================================== */
+/* Hero Section */
 #home {
-  margin-top: 130px; /* push the hero down so it never sits under the header */
+  margin-top: 0; /* flush under header */
   position: relative;
   text-align: center;
   color: white;
@@ -110,21 +184,19 @@ nav li a:hover {
 .hero-text {
   position: absolute;
   top: 50%;
-  left: 33.3%;                     /* desktop: one-third across */
+  left: 33.3%;
   transform: translate(-50%, -50%);
   font-size: 2.5rem;
   font-weight: bold;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-  white-space: nowrap;             /* keep heading and subtitle on one “line” block */
+  white-space: nowrap;
 }
 
-/* ===================================================================
-   Content Sections (Reduced Height & Right-Aligned Images)
-   =================================================================== */
+/* Content Sections */
 section.content-section {
-  padding: 2rem 1.5rem;                   /* was 3rem 2rem */
+  padding: 2rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.9);
-  margin: 1.5rem auto;                    /* reduced top/bottom margin */
+  margin: 1.5rem auto;
   max-width: 1000px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -137,17 +209,15 @@ section.content-section:nth-of-type(even) {
 section.content-section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #1B5E20; /* Forest green */
+  color: #1B5E20;
 }
 
-/* Ensure app names (h3) are dark in Apps section */
 section.content-section h3 {
-  color: #1B5E20; /* Forest green for app titles */
+  color: #1B5E20;
 }
 
-/* Ensure list items are visible on a white background */
 section.content-section li {
-  color: #333; /* Dark gray for bullets/text */
+  color: #333;
 }
 
 section.content-section p {
@@ -156,7 +226,7 @@ section.content-section p {
 }
 
 section.content-section a {
-  color: #0D47A1; /* Navy */
+  color: #0D47A1;
   text-decoration: underline;
 }
 
@@ -166,20 +236,20 @@ section.content-section a:hover {
 
 section.content-section .content-flex {
   display: flex;
-  align-items: center;            /* vertically center text & image */
-  justify-content: space-between; /* push items to edges */
+  align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   margin-top: 1rem;
 }
 
 section.content-section .text-block {
-  flex: 1 1 auto;      /* grow and shrink as needed */
-  margin-right: 1rem;  /* spacing before image */
+  flex: 1 1 auto;
+  margin-right: 1rem;
 }
 
 section.content-section .image-block {
-  flex: 0 0 auto;      /* do not grow or shrink */
-  max-width: 20%;      /* ensure image doesn’t overpower text */
+  flex: 0 0 auto;
+  max-width: 20%;
 }
 
 section.content-section .image-block img {
@@ -188,9 +258,7 @@ section.content-section .image-block img {
   border-radius: 8px;
 }
 
-/* ===================================================================
-   Footer
-   =================================================================== */
+/* Footer */
 footer {
   background-color: rgba(0, 0, 0, 0.25);
   padding: 2rem;
@@ -205,14 +273,14 @@ footer {
   margin-bottom: 1rem;
 }
 
-.social-links a {
+social-links a {
   font-size: 1.5rem;
   color: #FFFFFF;
   transition: color 0.2s ease;
 }
 
-.social-links a:hover {
-  color: #FFD54F; /* Gold accent on hover */
+social-links a:hover {
+  color: #FFD54F;
 }
 
 footer p {
@@ -220,11 +288,8 @@ footer p {
   color: #EEE;
 }
 
-/* ===================================================================
-   Responsive Adjustments
-   =================================================================== */
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
-  /* Slightly reduce logo for tablets/laptops if needed */
   #logo {
     width: 80px;
     height: 80px;
@@ -232,7 +297,6 @@ footer p {
 }
 
 @media (max-width: 768px) {
-  /* Header tweaks: allow nav to move below if necessary */
   header {
     padding: 0.75rem 1rem;
   }
@@ -246,7 +310,6 @@ footer p {
     font-size: 1.25rem;
   }
 
-  /* Nav links stack vertically under narrower widths */
   nav ul {
     flex-direction: column;
     gap: 0.75rem;
@@ -254,30 +317,29 @@ footer p {
     margin-top: 0.5rem;
   }
 
-  /* Center hero-text for tablets/mobiles */
   .hero-text {
-    left: 50%;                  /* center horizontally */
+    left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem;            /* a bit smaller */
-    white-space: normal;        /* allow wrapping if needed */
+    font-size: 2rem;
+    white-space: normal;
     text-align: center;
-    width: 80%;                 /* constrain width so it wraps nicely */
+    width: 80%;
   }
 
-  /* Content sections adjust padding/margin */
   section.content-section {
     padding: 1.5rem 1rem;
     margin: 1rem;
   }
+
   section.content-section h2 {
     font-size: 1.75rem;
   }
 
-  /* Stack content-flex vertically */
   section.content-section .content-flex {
     flex-direction: column;
     align-items: flex-start;
   }
+
   section.content-section .image-block {
     max-width: 100%;
     margin-top: 1rem;
@@ -285,37 +347,31 @@ footer p {
 }
 
 @media (max-width: 480px) {
-  /* Further shrink hero text on very small screens */
   .hero-text {
     font-size: 1.5rem;
     width: 90%;
   }
 
-  /* Header padding tighter on phones */
   header {
     padding: 0.5rem;
   }
 
-  /* Nav link font smaller */
   nav li a {
     font-size: 0.9rem;
   }
 
-  /* Content section headings smaller */
   section.content-section h2 {
     font-size: 1.5rem;
   }
 }
 
-
-/* ===================================================================
-   Optional: Adjust modal for very small screens
-   =================================================================== */
+/* Optional: Adjust modal for very small screens */
 @media (max-width: 480px) {
   .modal-content {
     max-width: 90%;
     padding: 1rem;
   }
+
   .close-button {
     top: 8px;
     right: 10px;
@@ -323,46 +379,41 @@ footer p {
   }
 }
 
-/* ===== Hero: full‐viewport height & cropping ===== */
+/* Hero: full‐viewport height & cropping */
 #home {
-  margin-top: 130px;                         /* keep below the fixed header */
-  position: relative;
-  text-align: center;
-  color: white;
-  height: calc(75vh - 130px);               /* fill remaining viewport */
-  overflow: hidden;                          /* hide the parts that stick out */
+  /* flush under header */
+  margin-top: 0;
+  height: calc(75vh - var(--header-height));
+  overflow: hidden;
 }
 
 #hero-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;                         /* crop to fill its container */
+  object-fit: cover;
 }
 
-/* ===== Scale down section icons on tablets & phones ===== */
+/* Scale down section icons on tablets & phones */
 @media (max-width: 768px) {
   section.content-section .content-flex {
     flex-direction: column;
-    align-items: center;                     /* center both text & image */
+    align-items: center;
   }
 
   section.content-section .image-block {
-    max-width: 50%;                          /* limit width of the “icon” */
+    max-width: 50%;
     margin-top: 1rem;
   }
 
   section.content-section .image-block img {
-    width: 100%;                             /* fill that 50% container */
+    width: 100%;
     height: auto;
     display: block;
   }
 }
 
-/* (Optional) Even tighter on really small phones */
 @media (max-width: 480px) {
   section.content-section .image-block {
-    max-width: 60%;                          /* a bit larger so it’s still legible */
+    max-width: 60%;
   }
 }
-
-

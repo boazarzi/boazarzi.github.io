@@ -7,19 +7,24 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="/assets/favicon.png" type="image/png" />
 </head>
-
 <body>
-  <!-- ===== Header ===== -->
   <header>
     <div id="logo-container">
       <img id="logo" src="assets/guruappslogo4.png" alt="Guru Apps Logo" />
       <span id="site-title">Guru Apps</span>
     </div>
-    <nav>
+    <!-- Hamburger button -->
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <!-- Main navigation -->
+    <nav id="navbar">
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#products">Products</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -164,5 +169,14 @@ Embrace each day with intention. <Br>Let Guru Apps be the gentle guide that help
     </div>
     <p>&copy; 2025 Guru Apps. All rights reserved.</p>
   </footer>
+<script>
+    // Toggle mobile nav
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.getElementById('navbar');
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>

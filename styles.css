@@ -75,7 +75,7 @@ body {
     top: var(--header-height);
     right: 1rem;
     width: auto;
-    background: white;
+    background-color: rgba(0, 0, 0, 0.5);    
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
@@ -95,12 +95,12 @@ body {
     text-align: center;
   }
   nav#navbar a {
-    color: #333;
+    color: white;
     text-decoration: none;
     font-weight: 500;
   }
   nav#navbar a:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: #1B5E20;
     border-radius: 4px;
   }
   .hamburger {
@@ -258,12 +258,27 @@ section.content-section .image-block img {
   border-radius: 8px;
 }
 
+section.content-section ul {
+  padding-left: 1.5rem; /* Aligns with the paragraph text */
+}
+
 /* Footer */
 footer {
   background-color: rgba(0, 0, 0, 0.25);
   padding: 2rem;
   text-align: center;
   margin-top: 2rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+footer a:hover {
+  color: #FFD54F;
+  text-decoration: underline;
 }
 
 .social-links {
@@ -273,7 +288,7 @@ footer {
   margin-bottom: 1rem;
 }
 
-social-links a {
+.social-links a {
   font-size: 1.5rem;
   color: #FFFFFF;
   transition: color 0.2s ease;

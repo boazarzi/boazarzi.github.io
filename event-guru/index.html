@@ -4,11 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Guru - Guru Apps</title>
-    <link rel="stylesheet" href="../styles.css"> </head>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Centering the main content and adding vertical breathing room */
+        main.content-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh; /* Takes up most of the screen height */
+            padding: 20px;
+        }
+
+        .content-flex {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .text-block {
+            flex: 1;
+            text-align: left;
+        }
+
+        .image-block {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px; /* Rounded corners for a modern feel */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Soft shadow to make it pop */
+        }
+
+        /* Mobile Responsive: Stack them vertically on small screens */
+        @media (max-width: 768px) {
+            .content-flex {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .text-block {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
 <body>
     <header>
         <div id="logo-container">
-            <a href="../index.html" style="text-decoration: none; display: flex; align-items: center;">
+            <a href="../" style="text-decoration: none; display: flex; align-items: center;">
                 <img id="logo" src="../assets/guruappslogo4.png" alt="Guru Apps Logo" />
                 <span id="site-title" style="color: white;">Guru Apps</span>
             </a>
@@ -18,12 +68,21 @@
     <main class="content-section">
         <div class="content-flex">
             <div class="text-block">
-                <h1>Event Guru</h1>
-                <p>Detailed description of the app goes here...</p>
-                <a href="https://eventguru.guruappsai.com" class="cta-button">Launch App</a>
+                <h1>Never Miss a Moment</h1>
+                <p>
+                    <strong>Event Guru</strong> is your AI-powered companion for discovering and organizing local events. 
+                    Whether it's a concert, a workshop, or a community gathering, we ensure you're always in the loop.
+                </p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                    <li>✅ Intelligent Event Discovery</li>
+                    <li>✅ Seamless Calendar Integration</li>
+                    <li>✅ Personalized Notifications</li>
+                </ul>
+                <a href="https://eventguru.guruappsai.com" class="cta-button">Launch Event Guru</a>
             </div>
+            
             <div class="image-block">
-                <img src="../assets/Event Guru Logo.png" alt="Event Guru">
+                <img src="https://image.pollinations.ai/prompt/A_sleek_modern_smartphone_displaying_a_vibrant_event_calendar_app_called_Event_Guru._The_background_is_a_tasteful_blur_of_a_city_festival_at_sunset._High_quality_photography_style." alt="Event Guru App Preview">
             </div>
         </div>
     </main>

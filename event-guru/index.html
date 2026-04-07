@@ -11,7 +11,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 80vh; /* Takes up most of the screen height */
+            min-height: 80vh;
             padding: 20px;
         }
 
@@ -20,14 +20,28 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            gap: 50px;
-            max-width: 1100px;
+            gap: 60px; /* Increased gap for better spacing */
+            max-width: 1200px;
             width: 100%;
         }
 
         .text-block {
-            flex: 1;
+            flex: 1.2; /* Give the text a bit more room */
             text-align: left;
+        }
+
+        /* Styling for the product logo badge */
+        .product-logo-badge {
+            width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+
+        .product-title {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #fff; /* Or your theme's primary color */
         }
 
         .image-block {
@@ -39,11 +53,11 @@
         .image-block img {
             max-width: 100%;
             height: auto;
-            border-radius: 20px; /* Rounded corners for a modern feel */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Soft shadow to make it pop */
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* Mobile Responsive: Stack them vertically on small screens */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .content-flex {
                 flex-direction: column-reverse;
@@ -51,6 +65,9 @@
             }
             .text-block {
                 text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -68,7 +85,11 @@
     <main class="content-section">
         <div class="content-flex">
             <div class="text-block">
-                <h1>Never Miss a Moment</h1>
+                <img src="../assets/Event Guru Logo.png" alt="Event Guru Logo" class="product-logo-badge">
+                
+                <h1 class="product-title">Event Guru</h1>
+                
+                <h2>Never Miss a Moment</h2>
                 <p>
                     <strong>Event Guru</strong> is your AI-powered companion for discovering and organizing local events. 
                     Whether it's a concert, a workshop, or a community gathering, we ensure you're always in the loop.

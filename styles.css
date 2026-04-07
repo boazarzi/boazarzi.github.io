@@ -258,6 +258,22 @@ section.content-section .image-block img {
   border-radius: 8px;
 }
 
+/* Apply consistent modern styling to all product images */
+section.content-section .image-block img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* Modern rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adds depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    display: block;
+}
+
+/* Subtle hover effect to make the images feel interactive */
+section.content-section .image-block img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
 section.content-section ul {
   padding-left: 1.5rem; /* Aligns with the paragraph text */
 }

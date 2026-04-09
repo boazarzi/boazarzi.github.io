@@ -1,213 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guru Apps</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guru Apps</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/assets/favicon.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Orbitron:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div id="logo-container">
-      <img id="logo" src="assets/guruappslogo4.png" alt="Guru Apps Logo" />
-      <span id="site-title">Guru Apps</span>
-    </div>
-    <!-- Hamburger button -->
-    <button class="hamburger" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <!-- Main navigation -->
-    <nav id="navbar">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- ===== Main Content ===== -->
-  <main>
-    <!-- Hero Section (Home) -->
-    <section id="home">
-      <img
-        id="hero-image"
-        src="assets/hero.webp"
-        alt="Hero Image Placeholder"
-      />
-      <div class="hero-text">
-        <h1>Guru Apps</h1>
-        <p>AI Tools to Balance your Day</p>
-      </div>
-    </section>
-
- <!-- ===== About Section ===== -->
-<section id="about" class="content-section">
-  <h2>About Us</h2>
-  <div class="content-flex">
-    <div class="text-block">
-      <p>
-        At Guru Apps, we imagine a world where technology fosters harmony and balance in everyday life. With this guiding vision, we build AI-powered solutions that simplify routines, reduce mental friction, and enable you to live with clarity, intention, and calm.
-      </p>
-      <p>
-        Available directly in your browser or on your mobile home screen, our applications require no bulky installs or confusing menus — just a clean interface powered by advanced AI that works quietly behind the scenes while respecting your privacy. As we grow into productivity, wellness, travel, finance, and beyond, our focus remains steady: crafting clear, private experiences that streamline your daily life.
-      </p>
-<p>
-Embrace each day with intention. <Br>Let Guru Apps be the gentle guide that helps you move forward with confidence and ease.
-</p>
-    </div>
-    <div class="image-block">      
-      <img
-        src="assets/guruappslogo2.png"
-        alt="Illustration conveying harmony and balance"
-      />
-    </div>
-  </div>
-</section>
-
-<!-- Products Section -->
-<section id="products" class="content-section">
-    <h2>Our Products</h2>
-
-  <!-- Pilot Rescue Block -->
-    <div class="content-flex">
-        <div class="text-block">
-            <h3>Pilot Rescue</h3>
-            <p><b>Race against time through hostile territory to reach a downed F-15 pilot before enemy forces capture him - or die trying.</b>. A U.S. F-15 Eagle has been shot down deep in hostile territory. The pilot has ejected and is now isolated, relying on survival training to evade capture while enemy forces close in. You are part of a rapid-response unit tasked with reaching the downed pilot before Iranian Republican Guard patrols do. Navigate dangerous terrain, outmaneuver enemy units, and engage in fast-paced combat as you race against time. Secure the pilot, eliminate threats along the way, and survive the extraction. One rule matters above all: get there first.</p>
-            <p> 
-              <a href="pilot-rescue/index.html" target="_blank">Play Pilot Rescue</a>
-            </p>
+    <header>
+        <div id="logo-container">
+            <img id="logo" src="assets/guruappslogo4.png" alt="Guru Apps Logo" />
+            <span id="site-title">Guru Apps</span>
         </div>
-      <div class="image-block">
-        <a href="pilot-rescue/index.html" target="_blank" rel="noopener noreferrer">
-          <img src="assets/Pilot Rescue.jpg"
-            alt="Pilot Rescue" />
-        </a>
-      </div>
-    </div>
-    <hr style="border: none; border-top: 2px solid #000; margin: 1em 0;">
-  
-    <!-- Event Guru Block -->
-    <div class="content-flex">
-        <div class="text-block">
-            <h3>Event Guru</h3>
-            <p><b>Turn any event flyer into your next calendar event in seconds</b>. Event Guru lets you capture any flyer or poster—either live with your phone’s camera or by uploading a saved image—and automatically extracts the date, time, location, and details using OCR. In just a few taps, it creates a calendar event for you, so you never miss what’s coming up.</p>
-            <p>
-                <a href="event-guru/" target="_blank">Open Event Guru</a>
-                on your mobile device.
-            </p>
-        </div>
-        <div class="image-block">
-            <a href="event-guru/" target="_blank" rel="noopener noreferrer">
-                <img src="assets/Event Guru Logo.png"
-                     alt="Event Guru" />
+        <!-- Hamburger button -->
+        <button class="hamburger" aria-label="Toggle navigation" aria-controls="navbar" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <!-- Main navigation -->
+        <nav id="navbar" role="navigation">
+            <ul>
+                <li><a href="#home" class="nav-link active" tabindex="0">Home</a></li>
+                <li><a href="#about" class="nav-link" tabindex="0">About</a></li>
+                <li><a href="#products" class="nav-link" tabindex="0">Products</a></li>
+                <li><a href="#contact" class="nav-link" tabindex="0">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== Main Content ===== -->
+    <main>
+        <!-- Hero Section (Home) -->
+        <section id="home" style="position:relative;">
+            <img id="hero-image"
+                 src="assets/hero.webp"
+                 alt="Hero Image Placeholder"
+                 style="width:100%;height:auto;display:block;" />
+            <div class="hero-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.35);pointer-events:none;"></div>
+            <div class="hero-text" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;text-align:center;z-index:2;">
+                <h1>Guru Apps</h1>
+                <p>AI Tools to Balance your Day</p>
+                <a href="#products" class="button cta-button" style="margin-top:1.5em;">See Our Products</a>
+            </div>
+        </section>
+
+        <!-- ===== About Section ===== -->
+        <section id="about" class="content-section">
+            <h2>About Us</h2>
+            <div class="content-flex">
+                <div class="text-block">
+                    <p>
+                        At Guru Apps, we imagine a world where technology fosters harmony and balance in everyday life. With this guiding vision, we build AI-powered solutions that simplify routines, reduce mental friction, and enable you to live with clarity, intention, and calm.
+                    </p>
+                    <p>
+                        Available directly in your browser or on your mobile home screen, our applications require no bulky installs or confusing menus — just a clean interface powered by advanced AI that works quietly behind the scenes while respecting your privacy. As we grow into productivity, wellness, travel, finance, and beyond, our focus remains steady: crafting clear, private experiences that streamline your daily life.
+                    </p>
+                    <p>
+                        Embrace each day with intention. <br>Let Guru Apps be the gentle guide that helps you move forward with confidence and ease.
+                    </p>
+                </div>
+                <div class="image-block">
+                    <img src="assets/guruappslogo2.png"
+                         alt="Illustration conveying harmony and balance" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="content-section">
+            <h2>Our Products</h2>
+
+            <!-- Pilot Rescue Block -->
+            <div class="content-flex">
+                <div class="text-block">
+                    <h3>Pilot Rescue</h3>
+                    <p><b>Race against time through hostile territory to reach a downed F-15 pilot before enemy forces capture him - or die trying.</b> A U.S. F-15 Eagle has been shot down deep in hostile territory. The pilot has ejected and is now isolated, relying on survival training to evade capture while enemy forces close in. You are part of a rapid-response unit tasked with reaching the downed pilot before Iranian Republican Guard patrols do. Navigate dangerous terrain, outmaneuver enemy units, and engage in fast-paced combat as you race against time. Secure the pilot, eliminate threats along the way, and survive the extraction. One rule matters above all: get there first.</p>
+                    <p>
+                        <a href="pilot-rescue/index.html" target="_blank" class="button">Play Pilot Rescue</a>
+                    </p>
+                </div>
+                <div class="image-block">
+                    <a href="pilot-rescue/index.html" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/Pilot Rescue.jpg"
+                             alt="Pilot Rescue" />
+                    </a>
+                </div>
+            </div>
+            <hr class="section-divider">
+
+            <!-- Event Guru Block -->
+            <div class="content-flex">
+                <div class="text-block">
+                    <h3>Event Guru</h3>
+                    <p><b>Turn any event flyer into your next calendar event in seconds</b>. Event Guru lets you capture any flyer or poster—either live with your phone’s camera or by uploading a saved image—and automatically extracts the date, time, location, and details using OCR. In just a few taps, it creates a calendar event for you, so you never miss what’s coming up.</p>
+                    <p>
+                        <a href="event-guru/" target="_blank" class="button">Open Event Guru</a>
+                        on your mobile device.
+                    </p>
+                </div>
+                <div class="image-block">
+                    <a href="event-guru/" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/Event Guru Logo.png"
+                             alt="Event Guru" />
+                    </a>
+                </div>
+            </div>
+            <hr class="section-divider">
+
+            <!-- Menu Guru Block -->
+            <div class="content-flex">
+                <div class="text-block">
+                    <h3>Menu Guru</h3>
+                    <p><b>Understand the menu, see allergens, dine confidently</b>. Menu Guru lets you snap a photo of any restaurant menu—no matter the language—or upload a saved image, and instantly analyzes each dish to highlight allergens and provide clear descriptions in your native tongue. Say goodbye to guessing ingredients or worrying about allergies; Menu Guru turns any menu into a personalized guide for confident, informed dining.</p>
+                    <p>
+                        <a href="https://menuguru.guruappsai.com" target="_blank" class="button">Open Menu Guru</a>
+                        on your mobile device.
+                    </p>
+                </div>
+                <div class="image-block">
+                    <a href="https://menuguru.guruappsai.com" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/Menu Guru Logo2.png"
+                             alt="Menu Guru" />
+                    </a>
+                </div>
+            </div>
+            <hr class="section-divider">
+
+            <!-- Cycle Goddess Block -->
+            <div class="content-flex">
+                <div class="text-block">
+                    <h3>Cycle Goddess</h3>
+                    <p><b>Effortlessly sync your cycle predictions to your Google Calendar</b>. Cycle Goddess empowers you to take command of your menstrual health with effortless precision. Simply tap to log the first day of your period or mark ovulation, and the app will calculate and display your upcoming cycle and fertile window for the next six months. Unlike other trackers, Cycle Goddess seamlessly integrates with your Google Calendar—creating all-day events and customizable reminders for period starts and ovulation days—so you never miss a beat. Your privacy is paramount: Cycle Goddess never reads your existing calendar entries, its developers cannot access your cycle data, and no information is ever shared with third parties. With its unique calendar‐syncing capability and iron-clad privacy, Cycle Goddess is the only companion you need to stay in tune with your body’s rhythm.</p>
+                    <p>
+                        <a href="https://cyclegoddess.guruappsai.com" target="_blank" class="button">Open Cycle Goddess</a>
+                        on your mobile device.
+                    </p>
+                </div>
+                <div class="image-block">
+                    <a href="https://cyclegoddess.guruappsai.com" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/Cycle Goddess.png"
+                             alt="Cycle Goddess" />
+                    </a>
+                </div>
+            </div>
+            <!-- Future apps can be added here in the exact same pattern -->
+        </section>
+
+        <!-- Contact Section (New) -->
+        <section id="contact" class="content-section">
+            <h2>Contact Us</h2>
+            <div class="content-flex">
+                <div class="text-block">
+                    <p>
+                        Have questions, feedback, or feature requests? We’d love to hear from you!
+                    </p>
+                    <ul>
+                        <li>
+                            Email:
+                            <a href="mailto:support@guruappsai.com">
+                                support@guruappsai.com
+                            </a>
+                        </li>
+                        <li>
+                            Twitter:
+                            <a href="https://twitter.com/GuruAppsAI" target="_blank">
+                                @GuruAppsAI
+                            </a>
+                        </li>
+                        <li>
+                            Instagram:
+                            <a href="https://instagram.com/GuruAppsAI" target="_blank">
+                                @GuruAppsAI
+                            </a>
+                        </li>
+                    </ul>
+                    <form class="contact-form" style="margin-top:1.5em;" aria-label="Contact form">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required autocomplete="name" />
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required autocomplete="email" />
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="3" required></textarea>
+                        <button type="submit" class="button">Send Message</button>
+                    </form>
+                </div>
+                <div class="image-block">
+                    <img src="assets/contact.png"
+                         alt="Contact Guru Apps" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <div class="social-links">
+            <a href="https://twitter.com/GuruAppsAI" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                <svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-twitter" /></svg>
+            </a>
+            <a href="https://facebook.com/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-facebook" /></svg>
+            </a>
+            <a href="https://instagram.com/GuruAppsAI" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <svg width="24" height="24" fill="currentColor" aria-hidden="true"><use href="#icon-instagram" /></svg>
             </a>
         </div>
-    </div>
-    <hr style="border: none; border-top: 2px solid #000; margin: 1em 0;">
-    <!-- Menu Guru Block -->
-    <div class="content-flex" style="margin-top: 2rem;">
-        <div class="text-block">
-            <h3>Menu Guru</h3>
-            <p><b>Understand the menu, see allergens, dine confidently</b>. Menu Guru lets you snap a photo of any restaurant menu—no matter the language—or upload a saved image, and instantly analyzes each dish to highlight allergens and provide clear descriptions in your native tongue. Say goodbye to guessing ingredients or worrying about allergies; Menu Guru turns any menu into a personalized guide for confident, informed dining.</p>
-            <p>
-                <a href="https://menuguru.guruappsai.com" target="_blank">Open Menu Guru</a>
-                on your mobile device.
-            </p>
+        <div class="social-links">
+            <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="font-size: 16px;">Privacy Notice</a>
         </div>
-        <div class="image-block">
-            <a href="https://menuguru.guruappsai.com" target="_blank" rel="noopener noreferrer">
-                <img src="assets/Menu Guru Logo2.png"
-                     alt="Menu Guru" />
-            </a>
-        </div>
-    </div>
-    <hr style="border: none; border-top: 2px solid #000; margin: 1em 0;">
-    <!-- Cycle Goddess Block -->
-    <div class="content-flex" style="margin-top: 2rem;">
-        <div class="text-block">
-            <h3>Cycle Goddess</h3>
-            <p><b>Effortlessly sync your cycle predictions to your Google Calendar</b>. Cycle Goddess empowers you to take command of your menstrual health with effortless precision. Simply tap to log the first day of your period or mark ovulation, and the app will calculate and display your upcoming cycle and fertile window for the next six months. Unlike other trackers, Cycle Goddess seamlessly integrates with your Google Calendar—creating all-day events and customizable reminders for period starts and ovulation days—so you never miss a beat. Your privacy is paramount: Cycle Goddess never reads your existing calendar entries, its developers cannot access your cycle data, and no information is ever shared with third parties. With its unique calendar‐syncing capability and iron-clad privacy, Cycle Goddess is the only companion you need to stay in tune with your body’s rhythm..</p>
-            <p>
-                <a href="https://cyclegoddess.guruappsai.com" target="_blank">Open Cycle Goddess</a>
-                on your mobile device.
-            </p>
-        </div>
-        <div class="image-block">
-            <a href="https://cyclegoddess.guruappsai.com" target="_blank" rel="noopener noreferrer">
-                <img src="assets/Cycle Goddess.png"
-                     alt="Cycle Goddess" />
-            </a>
-        </div>
-    </div>
-    <!-- Future apps can be added here in the exact same pattern -->
-</section>
+        <p>&copy; 2025 Guru Apps. All rights reserved.</p>
+        <!-- SVG sprite for icons -->
+        <svg style="display:none;">
+            <symbol id="icon-twitter" viewBox="0 0 24 24">
+                <path d="M22.46 5.92c-.8.36-1.67.6-2.58.71a4.48 4.48 0 0 0 1.97-2.48 8.94 8.94 0 0 1-2.83 1.08 4.48 4.48 0 0 0-7.64 4.08A12.7 12.7 0 0 1 3.1 4.86a4.48 4.48 0 0 0 1.39 5.98c-.74-.02-1.44-.23-2.05-.57v.06a4.48 4.48 0 0 0 3.6 4.4c-.35.1-.72.15-1.1.15-.27 0-.53-.03-.78-.07a4.48 4.48 0 0 0 4.18 3.11A9 9 0 0 1 2 19.54a12.7 12.7 0 0 0 6.88 2.02c8.26 0 12.78-6.84 12.78-12.78 0-.2 0-.39-.01-.58a9.1 9.1 0 0 0 2.24-2.3z" />
+            </symbol>
+            <symbol id="icon-facebook" viewBox="0 0 24 24">
+                <path d="M22.68 0H1.32A1.32 1.32 0 0 0 0 1.32v21.36A1.32 1.32 0 0 0 1.32 24h11.5v-9.29H9.69v-3.62h3.13V8.41c0-3.1 1.89-4.79 4.65-4.79 1.32 0 2.45.1 2.78.14v3.22h-1.91c-1.5 0-1.79.71-1.79 1.75v2.3h3.58l-.47 3.62h-3.11V24h6.09A1.32 1.32 0 0 0 24 22.68V1.32A1.32 1.32 0 0 0 22.68 0" />
+            </symbol>
+            <symbol id="icon-instagram" viewBox="0 0 24 24">
+                <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.41a4.92 4.92 0 0 1 1.77 1.03 4.92 4.92 0 0 1 1.03 1.77c.17.46.354 1.26.41 2.43.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.41 2.43a4.92 4.92 0 0 1-1.03 1.77 4.92 4.92 0 0 1-1.77 1.03c-.46.17-1.26.354-2.43.41-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.43-.41a4.92 4.92 0 0 1-1.77-1.03 4.92 4.92 0 0 1-1.03-1.77c-.17-.46-.354-1.26-.41-2.43C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.85c.056-1.17.24-1.97.41-2.43A4.92 4.92 0 0 1 3.71 2.95a4.92 4.92 0 0 1 1.77-1.03c.46-.17 1.26-.354 2.43-.41C8.416 2.212 8.8 2.2 12 2.2zm0-2.2C8.736 0 8.332.013 7.052.072 5.77.13 4.77.31 3.95.54a7.07 7.07 0 0 0-2.56 1.64A7.07 7.07 0 0 0 .54 4.05c-.23.82-.41 1.82-.47 3.1C.013 8.332 0 8.736 0 12c0 3.264.013 3.668.072 4.948.058 1.282.24 2.282.47 3.1a7.07 7.07 0 0 0 1.64 2.56 7.07 7.07 0 0 0 2.56 1.64c.82.23 1.82.41 3.1.47C8.332 23.987 8.736 24 12 24s3.668-.013 4.948-.072c1.282-.058 2.282-.24 3.1-.47a7.07 7.07 0 0 0 2.56-1.64 7.07 7.07 0 0 0 1.64-2.56c.23-.82.41-1.82.47-3.1.059-1.28.072-1.684.072-4.948 0-3.264-.013-3.668-.072-4.948-.058-1.282-.24-2.282-.47-3.1a7.07 7.07 0 0 0-1.64-2.56A7.07 7.07 0 0 0 20.05.54c-.82-.23-1.82-.41-3.1-.47C15.668.013 15.264 0 12 0zM12 5.838A6.162 6.162 0 1 0 18.162 12 6.162 6.162 0 0 0 12 5.838zm0 10.162A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.406-11.845a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z" />
+            </symbol>
+        </svg>
+    </footer>
+    <script>
+        // Toggle mobile nav
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.getElementById('navbar');
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('open');
+            hamburger.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', nav.classList.contains('open'));
+        });
 
-    <!-- Contact Section (New) -->
-    <section id="contact" class="content-section">
-      <h2>Contact Us</h2>
-      <div class="content-flex">
-        <div class="text-block">
-          <p>
-            Have questions, feedback, or feature requests? We’d love to hear from you!
-          </p>
-          <ul>
-            <li>
-              Email: 
-              <a href="mailto:support@guruappsai.com">
-                support@guruappsai.com
-              </a>
-            </li>
-            <li>
-              Twitter: 
-              <a href="https://twitter.com/GuruAppsAI" target="_blank">
-                @GuruAppsAI
-              </a>
-            </li>
-            <li>
-              Instagram: 
-              <a href="https://instagram.com/GuruAppsAI" target="_blank">
-                @GuruAppsAI
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="image-block">
-          <!-- Optionally replace with a contact illustration -->
-          <img
-            src="assets/contact.png"
-            alt="Contact Guru Apps"
-          />
-        </div>
-      </div>
-    </section>
-  </main>
+        // Highlight active nav link on scroll
+        const sections = document.querySelectorAll('main section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 80;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
 
-  <!-- ===== Footer ===== -->
-  <footer>
-    <div class="social-links">
-      <!-- Replace href="#" with actual social URLs if you’d like -->
-      <a href="#" aria-label="Twitter">Twitter</a>
-      <a href="#" aria-label="Facebook">Facebook</a>
-      <a href="#" aria-label="Instagram">Instagram</a>
-    </div>
-    <div class="social-links">
-      <a href="privacy.html" target="_blank" rel="noopener noreferrer" style="font-size: 16px;">Privacy Notice</a>
-    </div>
-    <p>&copy; 2025 Guru Apps. All rights reserved.</p>
-  </footer>
-<script>
-    // Toggle mobile nav
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.getElementById('navbar');
-    hamburger.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      hamburger.classList.toggle('open');
-    });
-  </script>
+        // Contact form (demo only, no backend)
+        document.querySelector('.contact-form')?.addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your message!');
+            this.reset();
+        });
+    </script>
 </body>
 </html>

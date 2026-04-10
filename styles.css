@@ -170,22 +170,22 @@ nav#navbar ul {
     position: relative;
     min-height: 60vh;
     width: 100vw;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    /* Add a fallback background color or gradient if you want */
-    /* background: var(--brand-violet); */
 }
 
 #hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     filter: brightness(0.85);
     z-index: 0;
-    /* Remove position: absolute; top/left */
 }
 
 .hero-overlay {
@@ -209,9 +209,6 @@ nav#navbar ul {
     width: 100%;
     padding: 2em 1em;
 }
-
-
-
 
     .hero-text h1 {
         font-size: 2.8em;
@@ -440,10 +437,6 @@ footer {
 @media (max-width: 900px) {
     #home {
         min-height: 50vh;
-    }
-
-    #hero-image {
-        /* Remove height: 40vh; */
     }
 
     .hero-text h1 {

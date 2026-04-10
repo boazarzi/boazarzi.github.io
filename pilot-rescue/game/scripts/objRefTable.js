@@ -7,6 +7,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.scrollto,
 		C3.Behaviors.bound,
 		C3.Plugins.Keyboard,
+		C3.Plugins.Audio,
+		C3.Plugins.Touch,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.System.Exps.int,
@@ -15,12 +17,24 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.System.Acts.ScrollY,
 		C3.Plugins.Sprite.Exps.Y,
+		C3.Plugins.Audio.Acts.Play,
+		C3.Behaviors.EightDir.Acts.SetDefaultControls,
 		C3.Plugins.System.Cnds.For,
 		C3.Plugins.System.Exps.loopindex,
 		C3.Plugins.System.Cnds.Repeat,
 		C3.Plugins.System.Cnds.EveryTick,
+		C3.Plugins.Sprite.Acts.MoveForward,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
-		C3.Behaviors.EightDir.Acts.SetMaxSpeed
+		C3.Behaviors.EightDir.Acts.SetMaxSpeed,
+		C3.Plugins.Touch.Cnds.IsInTouch,
+		C3.Plugins.Sprite.Acts.RotateTowardPosition,
+		C3.Plugins.Touch.Exps.X,
+		C3.Plugins.Touch.Exps.Y,
+		C3.Behaviors.EightDir.Exps.MaxSpeed,
+		C3.Plugins.Sprite.Cnds.OnCollision,
+		C3.Plugins.System.Acts.RestartLayout,
+		C3.Plugins.System.Cnds.Every,
+		C3.Plugins.Sprite.Acts.SetAngle
 	];
 };
 self.C3_JsPropNameTable = [
@@ -31,10 +45,13 @@ self.C3_JsPropNameTable = [
 	{"8Direction": 0},
 	{ScrollTo: 0},
 	{BoundTo: 0},
-	{Soldier: 0},
+	{Player: 0},
 	{Keyboard: 0},
 	{bush3: 0},
 	{womanGreen_stand: 0},
+	{Audio: 0},
+	{Enemy: 0},
+	{Touch: 0},
 	{CellSize: 0},
 	{GridWidth: 0},
 	{GridHeight: 0},
@@ -45,8 +62,11 @@ self.InstanceType = {
 	terrain_dirt_a: class extends self.ISpriteInstance {},
 	terrain_sand_a: class extends self.ISpriteInstance {},
 	terrain_dirt_block_center: class extends self.ISpriteInstance {},
-	Soldier: class extends self.ISpriteInstance {},
+	Player: class extends self.ISpriteInstance {},
 	Keyboard: class extends self.IInstance {},
 	bush3: class extends self.ISpriteInstance {},
-	womanGreen_stand: class extends self.ISpriteInstance {}
+	womanGreen_stand: class extends self.ISpriteInstance {},
+	Audio: class extends self.IInstance {},
+	Enemy: class extends self.ISpriteInstance {},
+	Touch: class extends self.IInstance {}
 }

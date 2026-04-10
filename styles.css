@@ -169,6 +169,7 @@ nav#navbar ul {
 #home {
     position: relative;
     min-height: 60vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,11 +177,15 @@ nav#navbar ul {
 }
 
 #hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 60vh;
+    height: 100%;
     object-fit: cover;
     display: block;
     filter: brightness(0.85);
+    z-index: 0;
 }
 
 .hero-overlay {
@@ -194,14 +199,14 @@ nav#navbar ul {
 }
 
 .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    z-index: 2;
     color: var(--brand-white);
     text-align: center;
-    z-index: 2;
+    width: 100%;
+    padding: 2em 1em;
 }
+
 
     .hero-text h1 {
         font-size: 2.8em;
@@ -428,22 +433,12 @@ footer {
 
 /* === Responsive Design === */
 @media (max-width: 900px) {
-    .content-flex {
-        flex-direction: column;
-        gap: 1.5em;
-        text-align: center;
-    }
-
-    .image-block {
-        margin-bottom: 1em;
-    }
-
-    .content-section {
-        padding: 2em 0.7em;
+    #home {
+        min-height: 50vh;
     }
 
     #hero-image {
-        height: 40vh;
+        /* Remove height: 40vh; */
     }
 
     .hero-text h1 {
@@ -452,12 +447,8 @@ footer {
 }
 
 @media (max-width: 600px) {
-    header {
-        padding: 0.5em 0.7em;
-    }
-
-    .content-section {
-        padding: 1.2em 0.2em;
+    #home {
+        min-height: 40vh;
     }
 
     .hero-text h1 {
@@ -473,6 +464,7 @@ footer {
         padding: 0.7em 1.2em;
     }
 }
+
 
 /* === Accessibility: Focus outline for keyboard users === */
 a:focus,

@@ -321,6 +321,10 @@ nav#navbar ul {
     margin: 2em 0;
 }
 
+#apps {
+    margin-bottom: 2.5em;
+}
+
 /* === Button Styles === */
 .button {
     display: inline-block;

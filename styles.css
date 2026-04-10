@@ -306,7 +306,7 @@ nav#navbar ul {
         border-radius: 10px;
         box-shadow: 0 2px 12px rgba(0,0,0,0.07);
         transition: transform 0.2s, box-shadow 0.2s;
-        background: var(--brand-white);
+        /*background: var(--brand-white);*/
     }
 
         .image-block img:hover {

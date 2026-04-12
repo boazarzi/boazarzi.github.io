@@ -1,0 +1,5 @@
+[
+null,
+{"id":1,"battlerName":"Agam battler","characterIndex":0,"characterName":"Agam","classId":1,"equips":[1,1,2,3,0],"faceIndex":0,"faceName":"Agam","traits":[{"code":43,"dataId":4,"value":1},{"code":43,"dataId":3,"value":1}],"initialLevel":1,"maxLevel":99,"name":"Agam","nickname":"The Hero","note":"","profile":""},
+{"id":2,"battlerName":"Noga battler","characterIndex":0,"characterName":"Noga","classId":3,"equips":[2,1,2,3,0],"faceIndex":1,"faceName":"Actor4","traits":[],"initialLevel":1,"maxLevel":99,"name":"Noga","nickname":"The Magician","note":"","profile":""}
+]
